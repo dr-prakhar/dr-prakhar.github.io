@@ -1,191 +1,229 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dr Prakhar</title>
-    <style> .profile-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 24px auto;
-    border: 3px solid #1f3c88;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr Prakhar — Pediatric Intensive Care</title>
+
+  <style>
+    /* ===== page reset / base ===== */
+    :root {
+      --accent: #1f3c88;
+      --muted: #6b6f76;
+      --bg: #eef2f6;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
     body {
-        font-family: "Segoe UI", Arial, sans-serif;
-        background-color: #eef2f6;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: #222;
+      margin: 0;
+      line-height: 1.55;
     }
 
+    /* ===== container / card ===== */
     .container {
-        max-width: 900px;
-        margin: 60px auto;
-        background: white;
-        padding: 50px;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      max-width: 980px;
+      margin: 48px auto;
+      background: var(--card);
+      padding: 48px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
-        .top-section {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-}
 
-.left {
-  flex: 1;
-  text-align: center;
-}
+    /* ===== header / top section ===== */
+    .header {
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #e6e9ef;
+    }
 
-.right {
-  flex: 2;
-  font-size: 16px;
-}
+    .top-section {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
 
-/* Mobile friendly */
-@media (max-width: 768px) {
-  .top-section {
-    flex-direction: column;
-    text-align: center;
-  }
+    .left {
+      flex: 0 0 220px;
+      text-align: center;
+    }
 
-  .right {
-    text-align: left;
-  }
-}
-.header {
-    text-align: center;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #e0e0e0;
-}
+    .profile-photo {
+      width: 150px;               /* adjust if you want bigger */
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 16px auto;
+      border: 3px solid var(--accent);
+      background: #fff;
+    }
+
     h1 {
-        margin-top: 0;
-        font-size: 32px;
-        color: #1f3c88;
-    }
-
-    h2 {
-        color: #1f3c88;
-        border-bottom: 2px solid #e0e6ef;
-        padding-bottom: 6px;
-        margin-top: 40px;
+      margin: 0 0 6px 0;
+      font-size: 28px;
+      color: var(--accent);
     }
 
     .subtitle {
-        font-size: 18px;
-        color: #555;
-        margin-bottom: 5px;
+      margin: 0 0 8px 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .role {
+      font-weight: 600;
+      margin: 6px 0 10px 0;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      color: white;
+      background: var(--accent);
+      border: 0;
+    }
+
+    .btn.secondary {
+      background: #4b5569;
+    }
+
+    /* right column (intro paragraph) */
+    .right {
+      flex: 1;
+      font-size: 15px;
+      color: #333;
+    }
+
+    /* ===== main sections ===== */
+    h2 {
+      color: var(--accent);
+      margin: 18px 0 12px 0;
+      font-size: 18px;
+    }
+
+    p, li {
+      color: #2b2b2b;
+      font-size: 15px;
     }
 
     ul {
-        padding-left: 20px;
+      margin: 8px 0 18px 0;
+      padding-left: 20px;
     }
 
-    li {
-        margin-bottom: 15px;
+    li { margin-bottom: 10px; }
+
+    /* small visual badges for skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
     }
-</style>
+    .skill {
+      background: #f2f6fb;
+      color: #173a7a;
+      border-radius: 18px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+
+    /* responsive layout */
+    @media (max-width: 780px) {
+      .top-section { flex-direction: column; gap: 18px; }
+      .left { flex: none; text-align: center; }
+      .right { text-align: left; padding: 0 6px; }
+      .container { padding: 28px; margin: 20px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+
+    <!-- HEADER / TOP -->
+    <!-- NOTE: I used the uploaded filename profile.jpg.jpeg to match your repo. 
+         Rename file to profile.jpg and update src if you prefer shorter name. -->
     <div class="header">
-  <div class="top-section">
-    
-    <div class="left">
-      <img src="photo.jpg.jpeg" alt="Dr Prakhar" class="profile-photo">
-      <h1>Dr Prakhar Sharma</h1>
-      <p>Pediatrician | Neonatology & PICU</p>
+      <div class="top-section">
+        <div class="left">
+          <img src="profile.jpg.jpeg" alt="Dr Prakhar" class="profile-photo">
+          <h1>Dr Prakhar Sharma</h1>
+          <div class="subtitle">MD Pediatrics</div>
+          <div class="role">Attending Consultant — Pediatric Intensive Care</div>
+
+          <div class="contact-buttons">
+            <!-- Replace the email and LinkedIn URL with your actual links -->
+            <a class="btn" href="mailto:that.dr.prakhar@gmail.com">Email</a>
+            <a class="btn secondary" href="http://linkedin.com/in/dr-prakhar-sharma-a2a487185" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="right">
+          <p>
+            Attending consultant in PICU with focused experience in neonatal and pediatric critical care.
+            I manage high-acuity patients, supervise residents, and lead multidisciplinary coordination and quality improvement efforts.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="right">
-      <p>
-        Pediatrician with focused experience in Neonatology and Pediatric Intensive Care.
-        Currently working as Attending Consultant in PICU at Jayprabha Medanta Hospital, Patna.
-      </p>
+    <!-- ABOUT -->
+    <h2>About Me</h2>
+    <p>
+      I am an Attending Consultant in Pediatric Intensive Care with experience in managing critically ill neonates and children
+      in high-acuity PICU and NICU settings. My clinical work focuses on evidence-based intensive care, multidisciplinary coordination,
+      and family-centered decision-making. I continue to engage in clinical education and academic development.
+    </p>
+
+    <!-- EDUCATION -->
+    <h2>Education & Training</h2>
+    <ul>
+      <li><strong>Fellowship in Neonatology (FNNF)</strong> — National Neonatology Forum (NNF) <em>Sep 2024 – Sep 2025</em></li>
+      <li><strong>MD Pediatrics</strong> — Sharda University, Greater Noida <em>2018 – 2021</em></li>
+      <li><strong>MBBS</strong> — Rohilkhand Medical College and Hospital, Bareilly <em>2010 – 2015</em></li>
+    </ul>
+
+    <!-- EXPERIENCE -->
+    <h2>Professional Experience</h2>
+    <ul>
+      <li><strong>Attending Consultant — PICU</strong>, Jayprabha Medanta Hospital, Patna <em>Feb 2026 – Present</em></li>
+      <li><strong>Consultant — Pediatrics & Neonatology</strong>, Mahavir Vaatsalya Aspatal, Patna <em>Sep 2025 – Feb 2026</em></li>
+      <li><strong>Fellow — Neonatology</strong>, National Neonatology Forum (NNF) <em>Sep 2024 – Sep 2025</em></li>
+      <li><strong>Consultant — Pediatrics & Neonatology</strong>, Mahavir Vaatsalya Aspatal, Patna <em>Mar 2024 – Sep 2024</em></li>
+    </ul>
+
+    <!-- CURRENT ROLE -->
+    <h2>Current Role</h2>
+    <p>
+      Attending Consultant, Pediatric Intensive Care Unit (PICU) — Jayprabha Medanta Hospital, Patna.
+      Responsibilities include independent management of critically ill pediatric patients, trainee supervision, and involvement in protocols and QI.
+    </p>
+
+    <!-- SKILLS -->
+    <h2>Clinical Expertise & Skills</h2>
+    <div class="skills">
+      <div class="skill">PICU management</div>
+      <div class="skill">Neonatal stabilization</div>
+      <div class="skill">Mechanical ventilation (neonatal/pediatric)</div>
+      <div class="skill">Inotropic support</div>
+      <div class="skill">Team coordination</div>
+      <div class="skill">Teaching & supervision</div>
     </div>
 
   </div>
-</div>
-
-    <div class="header">
-        <img src="profile.jpg.jpeg" alt="Dr Prakhar" class="profile-photo">
-
-        <h1>Dr Prakhar</h1>
-        <p class="subtitle">MD Pediatrics</p>
-        <p><strong>Attending Consultant – Pediatric Intensive Care</strong></p>
-        <p>Jayprabha Medanta Hospital, Patna</p>
-    </div>
-        
-    <h2>About Me</h2>
-<p>
-I am an Attending Consultant in Pediatric Intensive Care with experience in managing critically ill neonates and children in high-acuity PICU and NICU settings. My clinical work focuses on evidence-based intensive care, multidisciplinary coordination, and family-centered decision-making. I have formal training in pediatric and neonatal critical care and continue to engage in academic and clinical development.
-</p>
-
-
-<h2>Education & Training</h2>
-
-<ul>
-  <li>
-    <strong>Fellowship in Neonatology (FNNF)</strong><br>
-    National Neonatology Forum (NNF)<br>
-    <em>September 2024 – September 2025</em>
-  </li>
-  <br>
-  <li>
-    <strong>MD Pediatrics</strong><br>
-    Sharda University, Greater Noida<br>
-    <em>2018 – 2021</em>
-  </li>
-  <br>
-  <li>
-    <strong>MBBS</strong><br>
-    Rohilkhand Medical College and Hospital, Bareilly<br>
-    <em>2010 – 2015</em>
-  </li>
-</ul>
-
-
-
-<h2>Professional Experience</h2>
-
-<ul>
-  <li>
-    <strong>Attending Consultant – Pediatric Intensive Care Unit (PICU)</strong><br>
-    Jayprabha Medanta Hospital, Patna<br>
-    <em>February 2026 – Present</em>
-  </li>
-  <br>
-  <li>
-    <strong>Consultant – Pediatrics & Neonatology</strong><br>
-    Mahavir Vaatsalya Aspatal, Patna<br>
-    <em>September 2025 – February 2026</em>
-  </li>
-  <br>
-  <li>
-    <strong>Fellow – Neonatology</strong><br>
-    National Neonatology Forum (NNF)<br>
-    <em>September 2024 – September 2025</em>
-  </li>
-  <br>
-  <li>
-    <strong>Consultant – Pediatrics & Neonatology</strong><br>
-    Mahavir Vaatsalya Aspatal, Patna<br>
-    <em>March 2024 – September 2024</em>
-  </li>
-</ul>
-    <h2>Current Role</h2>
-<p>
-Attending Consultant, Pediatric Intensive Care Unit (PICU)<br>
-Jayprabha Medanta Hospital, Patna
-</p>
-
-<ul>
-    <li>Independent management of critically ill pediatric patients in PICU</li>
-    <li>Supervision of residents and coordination with multidisciplinary teams</li>
-    <li>Involvement in protocols, quality improvement, and critical care decision-making</li>
-</ul>
 </body>
 </html>

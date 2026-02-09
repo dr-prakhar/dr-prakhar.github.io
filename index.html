@@ -1,161 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dr Prakhar — Pediatric Intensive Care</title>
+  <title>Dr Prakhar Sharma — Pediatric Intensive Care</title>
 
   <style>
-    /* ===== page reset / base ===== */
-    :root {
-      --accent: #1f3c88;
-      --muted: #6b6f76;
-      --bg: #eef2f6;
-      --card: #ffffff;
+    :root{
+      --accent:#1f3c88;
+      --muted:#6b6f76;
+      --bg:#eef2f6;
+      --card:#ffffff;
     }
-    * { box-sizing: border-box; }
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: #222;
-      margin: 0;
-      line-height: 1.55;
-    }
-
-    /* ===== container / card ===== */
-    .container {
-      max-width: 980px;
-      margin: 48px auto;
-      background: var(--card);
-      padding: 48px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    *{box-sizing:border-box}
+    body{
+      font-family:"Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:#222;
+      margin:0;
+      line-height:1.55;
     }
 
-    /* ===== header / top section ===== */
-    .header {
-      padding-bottom: 28px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid #e6e9ef;
+    .container{
+      max-width:980px;
+      margin:48px auto;
+      background:var(--card);
+      padding:40px;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
     }
 
-    .top-section {
-      display: flex;
-      gap: 36px;
-      align-items: center;
+    /* Header */
+    .header{
+      padding-bottom:24px;
+      margin-bottom:28px;
+      border-bottom:1px solid #e6e9ef;
     }
 
-    .left {
-      flex: 0 0 220px;
-      text-align: center;
+    .top-section{
+      display:flex;
+      gap:36px;
+      align-items:center;
     }
 
-    .profile-photo {
-      width: 150px;               /* adjust if you want bigger */
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 16px auto;
-      border: 3px solid var(--accent);
-      background: #fff;
+    .left{
+      flex:0 0 220px;
+      text-align:center;
     }
 
-    h1 {
-      margin: 0 0 6px 0;
-      font-size: 28px;
-      color: var(--accent);
+    .profile-photo{
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:50%;
+      display:block;
+      margin:0 auto 16px auto;
+      border:3px solid var(--accent);
+      background:#fff;
     }
 
-    .subtitle {
-      margin: 0 0 8px 0;
-      color: var(--muted);
-      font-size: 15px;
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      color:var(--accent);
     }
 
-    .role {
-      font-weight: 600;
-      margin: 6px 0 10px 0;
+    .subtitle{ margin:0 0 8px 0; color:var(--muted); font-size:15px; }
+
+    .role{ font-weight:600; margin:6px 0 10px 0; }
+
+    .contact-buttons{ display:flex; gap:10px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
+    .btn{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:6px;
+      text-decoration:none;
+      font-size:14px;
+      color:white;
+      background:var(--accent);
+    }
+    .btn.secondary{ background:#4b5569; }
+
+    .right{ flex:1; font-size:15px; color:#333; }
+
+    /* Content */
+    h2{ color:var(--accent); margin:18px 0 12px 0; font-size:18px; }
+    p, li{ color:#2b2b2b; font-size:15px; }
+    ul{ margin:8px 0 18px 0; padding-left:20px; }
+    li{ margin-bottom:10px; }
+
+    .skills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .skill{ background:#f2f6fb; color:#173a7a; border-radius:18px; padding:6px 10px; font-size:13px; }
+
+    .footer{
+      margin-top:50px;
+      padding-top:20px;
+      border-top:1px solid #e6e9ef;
+      text-align:center;
+      font-size:13px;
+      color:#777;
     }
 
-    .contact-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 8px;
+    @media (max-width:780px){
+      .top-section{ flex-direction:column; gap:18px; }
+      .left{ flex:none; text-align:center; }
+      .right{ text-align:left; padding:0 6px; }
+      .container{ padding:28px; margin:20px; }
+      .profile-photo{ width:140px; height:140px; }
     }
-
-    .btn {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      color: white;
-      background: var(--accent);
-      border: 0;
-    }
-
-    .btn.secondary {
-      background: #4b5569;
-    }
-
-    /* right column (intro paragraph) */
-    .right {
-      flex: 1;
-      font-size: 15px;
-      color: #333;
-    }
-
-    /* ===== main sections ===== */
-    h2 {
-      color: var(--accent);
-      margin: 18px 0 12px 0;
-      font-size: 18px;
-    }
-
-    p, li {
-      color: #2b2b2b;
-      font-size: 15px;
-    }
-
-    ul {
-      margin: 8px 0 18px 0;
-      padding-left: 20px;
-    }
-
-    li { margin-bottom: 10px; }
-
-    /* small visual badges for skills */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    .skill {
-      background: #f2f6fb;
-      color: #173a7a;
-      border-radius: 18px;
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-
-    /* responsive layout */
-    @media (max-width: 780px) {
-      .top-section { flex-direction: column; gap: 18px; }
-      .left { flex: none; text-align: center; }
-      .right { text-align: left; padding: 0 6px; }
-      .container { padding: 28px; margin: 20px; }
-    }
-    .footer {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #e6e9ef;
-  text-align: center;
-  font-size: 13px;
-  color: #777;
-}
   </style>
 </head>
 
@@ -163,27 +115,26 @@
   <div class="container">
 
     <!-- HEADER / TOP -->
-    <!-- NOTE: I used the uploaded filename profile.jpg.jpeg to match your repo. 
-         Rename file to profile.jpg and update src if you prefer shorter name. -->
     <div class="header">
       <div class="top-section">
         <div class="left">
+          <!-- Use the exact filename present in your repo -->
           <img src="profile.jpg.jpeg" alt="Dr Prakhar" class="profile-photo">
           <h1>Dr Prakhar Sharma</h1>
           <div class="subtitle">MD Pediatrics</div>
           <div class="role">Attending Consultant — Pediatric Intensive Care</div>
 
           <div class="contact-buttons">
-            <!-- Replace the email and LinkedIn URL with your actual links -->
             <a class="btn" href="mailto:that.dr.prakhar@gmail.com">Email</a>
             <a class="btn secondary" href="http://linkedin.com/in/dr-prakhar-sharma-a2a487185" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn secondary" href="Dr_Prakhar_Sharma_CV.pdf" target="_blank" rel="noopener">Download CV</a>
           </div>
         </div>
 
         <div class="right">
           <p>
-            Attending consultant in PICU with focused experience in neonatal and pediatric critical care.
-            I manage high-acuity patients, supervise residents, and lead multidisciplinary coordination and quality improvement efforts.
+            Attending Consultant in PICU with focused clinical experience across neonatal and pediatric critical care.
+            I manage high-acuity patients, supervise trainees, and lead multidisciplinary coordination and quality improvement efforts in the ICU.
           </p>
         </div>
       </div>
@@ -192,43 +143,74 @@
     <!-- ABOUT -->
     <h2>About Me</h2>
     <p>
-      I am an Attending Consultant in Pediatric Intensive Care with experience in managing critically ill neonates and children
-      in high-acuity PICU and NICU settings. My clinical work focuses on evidence-based intensive care, multidisciplinary coordination,
-      and family-centered decision-making. I continue to engage in clinical education and academic development.
+      I am an Attending Consultant in Pediatric Intensive Care with experience managing critically ill neonates and children in high-acuity NICU and PICU settings.
+      My clinical practice emphasises evidence-based ventilation strategies, tailored inotropic support, family-centered care, and structured trainee education.
     </p>
 
     <!-- EDUCATION -->
-    
+    <h2>Education & Training</h2>
+    <ul>
+      <li>
+        <strong>Fellowship in Pediatric Cardiac Critical Care</strong><br>
+        AHERF, Indraprastha Apollo Hospital, New Delhi<br>
+        <em>2022 – 2023</em>
+      </li>
+      <li>
+        <strong>Fellowship in Neonatology (FNNF)</strong><br>
+        National Neonatology Forum (NNF)<br>
+        <em>September 2024 – September 2025</em>
+      </li>
+      <li>
+        <strong>MD Pediatrics</strong><br>
+        Sharda University, Greater Noida<br>
+        <em>2018 – 2021</em>
+      </li>
+      <li>
+        <strong>MBBS</strong><br>
+        Rohilkhand Medical College and Hospital, Bareilly<br>
+        <em>2010 – 2015</em>
+      </li>
+    </ul>
 
     <!-- EXPERIENCE -->
-    <h2>Education & Training</h2>
+    <h2>Professional Experience</h2>
+    <ul>
+      <li>
+        <strong>Attending Consultant — Pediatric Intensive Care Unit (PICU)</strong><br>
+        Jayprabha Medanta Hospital, Patna<br>
+        <em>February 2026 – Present</em>
+      </li>
 
-<ul>
-  <li>
-    <strong>Fellowship in Pediatric Cardiac Critical Care</strong><br>
-    AHERF, Indraprastha Apollo Hospital, New Delhi<br>
-    <em>2022 – 2023</em>
-  </li>
-  <br>
-  
-  <li>
-    <strong>MD Pediatrics</strong><br>
-    Sharda University, Greater Noida<br>
-    <em>2018 – 2021</em>
-  </li>
-  <br>
-  <li>
-    <strong>MBBS</strong><br>
-    Rohilkhand Medical College and Hospital, Bareilly<br>
-    <em>2010 – 2015</em>
-  </li>
-</ul>
+      <li>
+        <strong>Consultant — Pediatrics & Neonatology</strong><br>
+        Mahavir Vaatsalya Aspatal, Patna<br>
+        <em>September 2025 – February 2026</em>
+      </li>
+
+      <li>
+        <strong>Consultant — Pediatrics & Neonatology</strong><br>
+        Mahavir Vaatsalya Aspatal, Patna<br>
+        <em>March 2024 – September 2024</em>
+      </li>
+
+      <li>
+        <strong>Assistant Professor — Pediatrics</strong><br>
+        Noida International Institute of Medical Sciences, Greater Noida<br>
+        <em>October 2023 – February 2024</em>
+      </li>
+
+      <li>
+        <strong>Senior Resident — Pediatrics</strong><br>
+        School of Medical Sciences & Research (SMS&R), Greater Noida<br>
+        <em>2021 – 2022</em>
+      </li>
+    </ul>
 
     <!-- CURRENT ROLE -->
     <h2>Current Role</h2>
     <p>
       Attending Consultant, Pediatric Intensive Care Unit (PICU) — Jayprabha Medanta Hospital, Patna.
-      Responsibilities include independent management of critically ill pediatric patients, trainee supervision, and involvement in protocols and QI.
+      Responsibilities include independent management of critically ill pediatric patients, trainee supervision, and involvement in protocols and quality improvement.
     </p>
 
     <!-- SKILLS -->
@@ -239,12 +221,27 @@
       <div class="skill">Mechanical ventilation (neonatal/pediatric)</div>
       <div class="skill">Inotropic support</div>
       <div class="skill">Team coordination</div>
+      <div class="skill">POCUS (basic)</div>
       <div class="skill">Teaching & supervision</div>
     </div>
 
+    <!-- PUBLICATIONS -->
+    <h2>Research & Publications</h2>
+    <ul>
+      <li>
+        Sharma P, Bansal N, Kaul A. <em>Exclusive breastfeeding practices and factors affecting them in urban areas of Uttar Pradesh.</em>
+        J Family Med Prim Care. 2025 Jan;14(1):38-44. doi:10.4103/jfmpc.jfmpc_1873_23. PMID:39989550; PMCID:PMC11844960.
+      </li>
+      <li>
+        Association of Screen Time Usage and Physical Activity With Overweight and Obesity Among School-Going Children in Uttar Pradesh.
+        Full article available on ResearchGate.
+      </li>
+    </ul>
+
+    <div class="footer">
+      © 2026 Dr. Prakhar Sharma · Pediatric Intensive Care · Patna
+    </div>
+
   </div>
-  <footer class="footer">
-  © 2026 Dr. Prakhar Sharma · Pediatric Intensive Care · Patna
-</footer>
 </body>
 </html>
